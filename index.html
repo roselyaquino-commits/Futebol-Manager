@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Manager Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         TELA INICIAL
+    =============================== -->
+
+    <main id="homeScreen" class="screen active">
+
+        <div class="logo">
+            <div class="logo-ball">⚽</div>
+            <h1>Football Manager</h1>
+            <p>Online</p>
+        </div>
+
+        <div class="home-content">
+
+            <button id="playFriendsButton" class="main-button">
+                <span>👥</span>
+                Jogar com amigos
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         MENU DE SALA
+    =============================== -->
+
+    <main id="roomMenu" class="screen">
+
+        <button id="backHomeButton" class="back-button">
+            ← Voltar
+        </button>
+
+        <div class="page-title">
+            <span>⚽</span>
+            <h2>Jogar com amigos</h2>
+            <p>Crie uma sala ou entre usando um código.</p>
+        </div>
+
+        <div class="room-options">
+
+            <button id="createRoomButton" class="room-card">
+                <div class="room-icon">🏟️</div>
+
+                <div>
+                    <h3>Criar sala</h3>
+                    <p>Crie uma sala e convide seus amigos.</p>
+                </div>
+
+                <strong>→</strong>
+            </button>
+
+
+            <button id="joinRoomButton" class="room-card">
+                <div class="room-icon">🔑</div>
+
+                <div>
+                    <h3>Entrar em sala</h3>
+                    <p>Use o código de uma sala existente.</p>
+                </div>
+
+                <strong>→</strong>
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         CRIAR SALA
+    =============================== -->
+
+    <main id="createRoomScreen" class="screen">
+
+        <button id="backRoomMenuFromCreate" class="back-button">
+            ← Voltar
+        </button>
+
+        <div class="page-title">
+            <span>🏟️</span>
+            <h2>Criar sala</h2>
+            <p>Configure seu time para entrar na partida.</p>
+        </div>
+
+
+        <div class="form-card">
+
+            <label for="playerName">
+                Seu nome
+            </label>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Ex: Edgar"
+                maxlength="20"
+            >
+
+
+            <label for="teamName">
+                Nome do time
+            </label>
+
+            <input
+                type="text"
+                id="teamName"
+                placeholder="Ex: Edgar FC"
+                maxlength="25"
+            >
+
+
+            <label>
+                Símbolo do time
+            </label>
+
+            <div id="crestOptions" class="crest-options">
+
+                <button class="crest-option selected" data-crest="⚽">⚽</button>
+                <button class="crest-option" data-crest="🦁">🦁</button>
+                <button class="crest-option" data-crest="🐺">🐺</button>
+                <button class="crest-option" data-crest="🦅">🦅</button>
+                <button class="crest-option" data-crest="🐯">🐯</button>
+                <button class="crest-option" data-crest="🐉">🐉</button>
+                <button class="crest-option" data-crest="🔥">🔥</button>
+                <button class="crest-option" data-crest="⭐">⭐</button>
+                <button class="crest-option" data-crest="👑">👑</button>
+                <button class="crest-option" data-crest="🛡️">🛡️</button>
+
+            </div>
+
+
+            <button id="createRoomConfirm" class="confirm-button">
+                Criar sala
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         SALA CRIADA
+    =============================== -->
+
+    <main id="lobbyScreen" class="screen">
+
+        <div class="lobby-header">
+
+            <div>
+                <span class="small-label">CÓDIGO DA SALA</span>
+
+                <div class="room-code" id="roomCode">
+                    ------
+                </div>
+
+                <p>Envie este código para seus amigos.</p>
+            </div>
+
+            <button id="copyCodeButton" class="copy-button">
+                📋 Copiar
+            </button>
+
+        </div>
+
+
+        <div class="lobby-card">
+
+            <div class="lobby-title">
+                <span>👥</span>
+                Jogadores na sala
+            </div>
+
+
+            <div id="playersLobby">
+
+                <div class="lobby-player">
+
+                    <div class="player-crest" id="lobbyCrest">
+                        ⚽
+                    </div>
+
+                    <div class="player-info">
+                        <strong id="lobbyPlayerName">
+                            Jogador
+                        </strong>
+
+                        <span id="lobbyTeamName">
+                            Time
+                        </span>
+                    </div>
+
+                    <span class="host-badge">
+                        DONO
+                    </span>
+
+                </div>
+
+
+                <div class="empty-player">
+                    <span>＋</span>
+                    Aguardando jogador...
+                </div>
+
+            </div>
+
+
+            <div class="lobby-status">
+                ⏳ Aguardando seus amigos entrarem...
+            </div>
+
+        </div>
+
+
+        <div class="mode-preview">
+
+            <span>FORMATO DA PARTIDA</span>
+
+            <div class="mode-question">
+                👥
+                <strong>Aguardando jogadores</strong>
+            </div>
+
+            <p>
+                O formato será definido de acordo com a quantidade de jogadores.
+            </p>
+
+        </div>
+
+
+        <button id="leaveRoomButton" class="leave-button">
+            Sair da sala
+        </button>
+
+    </main>
+
+
+    <!-- ==============================
+         ENTRAR EM SALA
+    =============================== -->
+<main id="joinRoomScreen" class="screen">
+
+    <button id="backRoomMenuFromJoin" class="back-button">
+        ← Voltar
+    </button>
+
+    <div class="page-title">
+        <span>🔑</span>
+        <h2>Entrar em sala</h2>
+        <p>Configure seu time e entre usando o código.</p>
+    </div>
+
+
+    <div class="form-card">
+
+        <label for="joinPlayerName">
+            Seu nome
+        </label>
+
+        <input
+            type="text"
+            id="joinPlayerName"
+            placeholder="Ex: João"
+            maxlength="20"
+        >
+
+
+        <label for="joinTeamName">
+            Nome do time
+        </label>
+
+        <input
+            type="text"
+            id="joinTeamName"
+            placeholder="Ex: João FC"
+            maxlength="25"
+        >
+
+
+        <label>
+            Símbolo do time
+        </label>
+
+        <div id="joinCrestOptions" class="crest-options">
+
+            <button class="crest-option selected" data-crest="⚽">⚽</button>
+            <button class="crest-option" data-crest="🦁">🦁</button>
+            <button class="crest-option" data-crest="🐺">🐺</button>
+            <button class="crest-option" data-crest="🦅">🦅</button>
+            <button class="crest-option" data-crest="🐯">🐯</button>
+            <button class="crest-option" data-crest="🐉">🐉</button>
+            <button class="crest-option" data-crest="🔥">🔥</button>
+            <button class="crest-option" data-crest="⭐">⭐</button>
+            <button class="crest-option" data-crest="👑">👑</button>
+            <button class="crest-option" data-crest="🛡️">🛡️</button>
+
+        </div>
+
+
+        <label for="joinRoomCode">
+            Código da sala
+        </label>
+
+        <input
+            type="text"
+            id="joinRoomCode"
+            placeholder="Ex: A7K92P"
+            maxlength="6"
+            autocomplete="off"
+        >
+
+
+        <button id="enterRoomConfirm" class="confirm-button">
+            Entrar na sala
+        </button>
+
+        <p id="joinError" class="error-message"></p>
+
+    </div>
+
+</main>
+  
+
+
+    <!-- NOTIFICAÇÃO -->
+
+    <div id="notification" class="notification"></div>
+
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
